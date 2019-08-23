@@ -29,7 +29,7 @@ function Gallery() {
 }
 
 export default function App() {
-  return <Gallery />;
+  // return <Gallery />;
   return (
     <ScrollView style={ styles.scrollView }>
       <Gallery />
@@ -40,7 +40,7 @@ export default function App() {
 const styles = StyleSheet.create({
   scrollView: {
     ...StyleSheet.absoluteFillObject,
-    paddingTop: 44,
+    top: 44,
   },
   container: {
     // ...StyleSheet.absoluteFillObject,
