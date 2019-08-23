@@ -50,13 +50,14 @@ const styles = StyleSheet.create({
     alignContent: 'center',
   },
   gallery: {
-    backgroundColor: '#f00',
     flex: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
+    alignItems: 'flex-start',
   },
   image: {
     minWidth: '50%',
+    paddingRight: 8,
   },
   paragraph: {
     marginTop: 8,

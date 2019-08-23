@@ -24,17 +24,9 @@ export default function( props ) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#ffc',
-        borderColor: '#cc0',
-        borderWidth: 1,
-        padding: 4,
     },
     image: {
         flex: 1,
-        borderColor: '#f00',
-        backgroundColor: '#fcc',
-        borderWidth: 1,
-        padding: 4,
     },
 });
   
