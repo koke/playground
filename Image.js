@@ -1,31 +1,33 @@
-import { Image } from 'react-native';
-import React, { useState, useEffect } from 'react';
+import { Image, StyleSheet, View } from 'react-native';
+import React from 'react';
 
 export default function( props ) {
-    const { src, width } = props
-    
-    const [ size, setSize ] = useState({});
-    useEffect(() => {
-        Image.getSize( src, ( width, height ) => setSize( { width, height } ) )
-    }, [ setSize, src ]);
-    
-    const ratio = size.width / size.height;
-    
-    const style = {
-        maxWidth: width,
-        flex: 1,
-        borderWidth: 1,
-        borderColor: 'blue',
-        marginBottom: 8,
-        backgroundColor: 'yellow',
-        // maxWidth: '100%',
-    }
+    const { style, ...imageProps } = props
     
     return (
-        <Image
-            style={ style }
-            source={ { uri: src } }
-            resizeMode="contain"
-        />
+        <View style={ [ styles.container, style ] }>
+            <Image
+                style={ styles.image }
+                { ...imageProps }
+            />
+        </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#ffc',
+        borderColor: '#cc0',
+        borderWidth: 1,
+        padding: 4,
+    },
+    image: {
+        flex: 1,
+        borderColor: '#f00',
+        backgroundColor: '#fcc',
+        borderWidth: 1,
+        padding: 4,
+    },
+});
+  
